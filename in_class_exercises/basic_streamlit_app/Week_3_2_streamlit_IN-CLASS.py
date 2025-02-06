@@ -21,25 +21,31 @@ import streamlit as st
 
 # Create a button that users can click.
 # If the button is clicked, the message changes.
-st.html("<h2> Do you like Deadpool, Wolverine, or Jesus the most?</h2>")
+tab1, tab2 = st.tabs(["Data", "Quiz"])
 
-if st.button("Deadpool"): 
-    st.html('<h3> Awwww, thank you!!! <3 </h3>')
-    st.image('https://pngimg.com/d/deadpool_PNG70.png')
-else: 
-    st.html("")
+with tab1: 
+    st.html("<h3> There is actually no data. We did that in a different file: Week_4_2_streamlit_data. </h3>")
+
+with tab2: 
+    st.html("<h2> Do you like Deadpool, Wolverine, or Jesus the most?</h2>")
+
+    if st.button("Deadpool"): 
+        st.html('<h3> Awwww, thank you!!! <3 </h3>')
+        st.image('https://pngimg.com/d/deadpool_PNG70.png')
+    else: 
+        st.html("")
     
-if st.button('Wolverine'): 
-    st.html("<h3> Thanks, bub </h3>")
-    st.image("https://images.bauerhosting.com/empire/2024/05/WOLV-CLAWS-TW.png?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80")
-else: 
-    st.html('')
+    if st.button('Wolverine'): 
+        st.html("<h3> Thanks, bub </h3>")
+        st.image("https://images.bauerhosting.com/empire/2024/05/WOLV-CLAWS-TW.png?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80")
+    else: 
+        st.html('')
 
-if st.button("Jesus"): 
-    st.html("<h3> I am the Alpha and the Omega </h3>")
-    st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrminxLDznOV-2y1wepRStL3yphvcCz2L2CA&s")
-else: 
-    st.html('')
+    if st.button("Jesus"): 
+        st.html("<h3> I am the Alpha and the Omega </h3>")
+        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrminxLDznOV-2y1wepRStL3yphvcCz2L2CA&s")
+    else: 
+        st.html('')
 # ------------------------
 # COLOR PICKER WIDGET
 # ------------------------
