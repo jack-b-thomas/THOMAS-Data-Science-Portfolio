@@ -1,3 +1,3 @@
 <h2> Luka got traded for next to nothing!</h2>
-<p> This is an app I built after the Luka-Anthony Davis trade last week. You can compare their stats and watch some highlight reels. This was mostly just me experimenting with some of the capabilities of streamlit. It was kinda fun. </p>
+<p> This is an app I built after the Luka-Anthony Davis trade last week. You can compare their stats and watch some highlight reels. Then, you can see if you think the trade makes sense, but there were definitely a lot of other factors that went into the trade. This was mostly just me experimenting with some of the capabilities of streamlit. It was kinda fun. </p>
 <p> The data I used for this app comes from NBAStuffer(https://www.nbastuffer.com). It has a bunch of stats for players, teams and refs. I used the player data from the 2024-25 season for this app. </p>
