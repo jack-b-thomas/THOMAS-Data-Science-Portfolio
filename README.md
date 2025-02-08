@@ -3,6 +3,6 @@
 <br>
 
  #
-<h3> My Most Recent Project: </h3> 
+<h4> My Most Recent Project: </h4> 
 <p> <a href='https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/luka_ad_trade_app'> Luka-AD Trade App </p>
  
