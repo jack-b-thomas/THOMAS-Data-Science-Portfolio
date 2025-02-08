@@ -43,8 +43,8 @@ if page == 'The Trade':
 elif page == 'Stats': 
     st.html("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:35px'> Player Statistics </h1>")
     st.write("Compare Luka and AD's statistics from the 2024-25 season, and see if the trade makes sense to you!")
-    df = pd.read_csv('Luka_AD.csv')
-    NBA_df = pd.read_csv('NBA Stats 202425 All Metrics  NBA Player Props Tool.csv')
+    df = pd.read_csv('data/Luka_AD.csv')
+    NBA_df = pd.read_csv('data/NBA Stats 202425 All Metrics  NBA Player Props Tool.csv')
     luka_df = NBA_df[NBA_df['NAME']== 'Luka Doncic']
     ad_df = NBA_df[NBA_df['NAME']== 'Anthony Davis']
     column1, column2 = st.columns([2,2], gap = 'medium', vertical_alignment='center') 
