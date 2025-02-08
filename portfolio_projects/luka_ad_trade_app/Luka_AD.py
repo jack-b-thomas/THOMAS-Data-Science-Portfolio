@@ -1,16 +1,18 @@
 import pandas as pd 
 import streamlit as st 
 from streamlit_option_menu import option_menu
+import plotly_express as px
 page = option_menu(
     menu_title = None,
     options= ['The Trade', 'Stats', 'Eye Test'],
     icons=['emoji-surprise', 'bar-chart', 'eye'],
     default_index=0,
     orientation='horizontal')
-
 if page == 'The Trade': 
-    st.markdown("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:24p'> It all went down on February 2, 2025 </h1>", unsafe_allow_html=True)
-    st.header('The Terms:')
+    st.html("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:40px'> It all went down on February 2, 2025 </h1>")
+    st.html('<p> On February 2, 2025, just after midnight, the Mavericks traded Luka Doncic for Anthony Davis. The trade was unlike anything anyone had ever seen before. Luka Doncic is universally regarded as a top 5 player in the world. At only 25 years old, he has made All-NBA First Team five times. For context, Steph Curry has made All-NBA First Team four times. Last June, Luka played through several injuries and took the Mavs to the NBA Finals. Anthony Davis is by no means a bad player, but he is almost 31 years old, and has never carried a team like Luka has. His lone championship came with Lebron James in the bubble. So, why would the Mavs deal their franchise player?')
+    st.html("<p> There are several theories that range from Luka's lack of conditioning to a politcal pressure scheme to legalize casinos in Texas. We may never know why Luka was traded, because the negotiations were so secretive. But here, you can compare Luka and AD's stats and conduct your own eye test to see if you have dealt Luka. (Spoiler Alert -- you wouldn't have)")
+    st.header('The Complete Terms:')
     logo1, logo2, logo3 = st.columns([1,1,1], gap = 'large', vertical_alignment='top')
     with logo1: 
         st.image('https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg', use_column_width=True) 
@@ -38,9 +40,8 @@ if page == 'The Trade':
         st.html('<h5> Jalen Hood-Schifino </h5>')
         st.image('https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032018/untitled-3_26.png?gdrsLh8gefGS0SBTga7JCr1nQaK41g9w&itok=kOiJNVqI', use_column_width=True)
         st.html('<h5> Two 2025 Second Round Picks </h5>')
-
 elif page == 'Stats': 
-    st.markdown("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:20p'> Player Statistics </h1>", unsafe_allow_html=True)
+    st.html("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:35px'> Player Statistics </h1>")
     st.write("Compare Luka and AD's statistics from the 2024-25 season, and see if the trade makes sense to you!")
     df = pd.read_csv('Luka_AD.csv')
     NBA_df = pd.read_csv('NBA Stats 202425 All Metrics  NBA Player Props Tool.csv')
@@ -68,47 +69,60 @@ elif page == 'Stats':
                                                'ApG', 
                                                'SpG', 
                                                'BpG', 
-                                               'TpG', 
+                                               'TOpG', 
                                                'ORtg', 
                                                'DRtg'], 
                           index = 8)
     luka_choice = float(luka_df[choice])
     ad_choice = float(ad_df[choice])
     if choice == 'AGE': 
-        st.write(f"Luka is {luka_choice} years old, whearas AD is {ad_choice} years old.")
+        st.html(f"Luka is <b> {luka_choice} </b> years old, whearas AD is <b> {ad_choice} </b> years old.")
     elif choice == 'GP': 
-        st.write(f"Luka has played {luka_choice} games this season, whearas AD has played {ad_choice} this season.")
+        st.html(f"Luka has played <b> {luka_choice} </b> games this season, whearas AD has played <b> {ad_choice} </b>this season.")
     elif choice == 'MPG': 
-        st.write(f"Luka averages {luka_choice} minutes per game, whearas AD averages {ad_choice} minutes per game.")
+        st.html(f"Luka averages <b> {luka_choice} </b> minutes per game, whearas AD averages <b> {ad_choice} </b> minutes per game.")
     elif choice == 'FT%': 
-        st.write(f"Luka's free throw percentage is {luka_choice}, whearas AD's is {ad_choice}.")
+        st.html(f"Luka's free throw percentage is <b> {luka_choice}</b>, whearas AD's is <b> {ad_choice}</b>.")
     elif choice == '2P%': 
-        st.write(f"Luka's two point shooting percentage is {luka_choice}, whearas AD's is {ad_choice}.")
+        st.html(f"Luka's two point shooting percentage is <b>{luka_choice}</b>, whearas AD's is <b>{ad_choice}</b>.")
     elif choice == '3P%':
-         st.write(f"Luka's three point shooting percentage is {luka_choice}, whearas AD's is {ad_choice}.")
+         st.html(f"Luka's three point shooting percentage is <b>{luka_choice}</b>, whearas AD's is <b>{ad_choice}</b>.")
     elif choice == 'eFG%':
-         st.write(f"Luka's effective field goal percentage is {luka_choice}, whearas AD's is {ad_choice}.")
+         st.html(f"Luka's effective field goal percentage is <b>{luka_choice}</b>, whearas AD's is <b>{ad_choice}</b>.")
     elif choice == 'TS%': 
-         st.write(f"Luka's true shooting percentage is {luka_choice}, whearas AD's is {ad_choice}.")
+         st.html(f"Luka's true shooting percentage is <b>{luka_choice}</b>, whearas AD's is <b>{ad_choice}</b>.")
     elif choice == 'PpG': 
-        st.write(f"Luka averages {luka_choice} points per game, whearas AD averages {ad_choice} points per game.")
+        st.html(f"Luka averages <b>{luka_choice}</b> points per game, whearas AD averages <b>{ad_choice}</b> points per game.")
     elif choice == "RpG": 
-        st.write(f"Luka averages {luka_choice} rebounds per game, whearas AD averages {ad_choice} rebounds per game.")
+        st.html(f"Luka averages <b>{luka_choice}</b> rebounds per game, whearas AD averages <b>{ad_choice}</b> rebounds per game.")
     elif choice == "ApG": 
-        st.write(f"Luka averages {luka_choice} assists per game, whearas AD averages {ad_choice} assists per game.")
+        st.html(f"Luka averages <b>{luka_choice}</b> assists per game, whearas AD averages <b>{ad_choice}</b> assists per game.")
     elif choice == 'SpG': 
-        st.write(f"Luka averages {luka_choice} steals per game, whearas AD averages {ad_choice} steals per game.")
+        st.html(f"Luka averages <b>{luka_choice}</b> steals per game, whearas AD averages <b>{ad_choice}</b> steals per game.")
     elif choice == 'BpG':
-        st.write(f"Luka averages {luka_choice} blocks per game, whearas AD averages {ad_choice} blocks per game.")
-    elif choice == 'TpG': 
-        st.write(f"Luka averages {luka_choice} turnovers per game, whearas AD averages {ad_choice} turnovers per game.")
+        st.html(f"Luka averages <b>{luka_choice}</b> blocks per game, whearas AD averages <b>{ad_choice}</b> blocks per game.")
+    elif choice == 'TOpG': 
+        st.html(f"Luka averages <b>{luka_choice}</b> turnovers per game, whearas AD averages <b>{ad_choice}</b> turnovers per game.")
     elif choice == 'ORtg': 
-        st.write(f"Luka's offensive rating is {luka_choice}, whearas AD's is {ad_choice}.")
+        st.html(f"Luka's offensive rating is <b>{luka_choice}</b>, whearas AD's is <b>{ad_choice}</b>.")
     else: 
-        st.write(f"Luka's defensive rating is {luka_choice}, whearas AD's defensive rating is {ad_choice}")
-    st.write('Do any of these stats help you make sense of the trade?')
+        st.html(f"Luka's defensive rating is <b>{luka_choice}</b>, whearas AD's defensive rating is <b>{ad_choice}</b>.")
+    small_NBA_df = NBA_df.head(20)
+    stat_fig = px.bar(small_NBA_df, x='NAME', y=choice, 
+                      labels={choice:'', 'NAME': ''},
+                      color='NAME',
+                      color_discrete_sequence=['#FFCCCB','#FFCCCB','#FFCCCB','#FFCCCB','#ff2b2b','#FFCCCB','#FFCCCB','#FFCCCB','#FFCCCB','#FFCCCB','#FFCCCB','#ff2b2b','#FFCCCB','#FFCCCB','#FFCCCB','#FFCCCB'],
+                      hover_name=choice,
+                      title=f'{choice} Comparison for the Top 20 Players in PpG'
+    )
+    stat_fig.update_traces(textfont_size=10,
+                           textposition='outside',
+                           showlegend=False)
+    stat_fig.update_layout(xaxis_tickangle= 45)
+    st.plotly_chart(stat_fig) 
+    st.html("<p style= 'text-alling: center; color: #D3D3D3; font-size:8px'> Player Data comes from <a href ='https://www.nbastuffer.com'> NBA Stuffer</a>")
 else: 
-    st.markdown("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:20p'> The Eye Test </h1>", unsafe_allow_html=True)
+    st.html("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:35px'> The Eye Test </h1>")
     st.write("Watch Luka and AD's highlight reels and see if this trade begins to make sense.")
     st.video('https://www.youtube.com/watch?v=QhU-cwIYL0w')
     st.video('https://www.youtube.com/watch?v=_-EK8G6GVVg')
