@@ -1,6 +1,10 @@
 <h2> <a href="https://www.youtube.com/watch?v=6D9Uh6oeMlA"> Hello There!</h2>
-<p>  Welcome! This portfolio contains all of my coding work this semester. The <b><i>in_class_exercises</i></b> folder holds all of the work I do in class. That code might not be complete. In the <b> <i>portfolio_projects</i> </b>folder, you can find all of the big projects I am working on this semester, including my portfolio update assignments. Feel free to check it out!
+<p> This portfolio contains all of my coding work for MDSC 20009: Intro to Data Science.</p> 
+<li> The <b><i>in_class_exercises</i></b> folder has all of the work I do in class.</li>
+<li> The <b><i>homework_exercises</i></b> folder has my weekly homework assignments.</li>
+<li> The <b><i>portfolio_projects</i></b> folder has all of the big projects I am working on this semester, including my portfolio update assignments.</li>
 <br>
+
 
  #
 <h4> My Most Recent Project: </h4> 
