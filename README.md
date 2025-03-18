@@ -7,8 +7,19 @@
 <br>
 
 
- #
+#
 ### My Most Recent Projects: 
-- #### [Tidy Data Project](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/TidyData-project): In this project, I convert a wide dataset into one that follows Tidy Data principles. This project taught me how to data clean properly, a skill that I will most likely use in all of my subsequent projects involving realworld data. 
-- #### [Luka-AD Streamlit App](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/luka_ad_trade_app): In this project, I created an app where you can compare  Luka Doncic and AD's stats between each other (and 20 other NBA players). This app was created in response to the wild Lakers-Mavericks Trade that sent Luka to LA for next to nothing in return.
+
+
+<img align="left" width="200" height="150" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOMTc0Xx_a18nAwr-F2lh1rLyAoiVOe-K4fje8hVM1lSfM0_WvYw45-Isdtqm1UZP5dpE&usqp=CAU"> 
+
+#### [Tidy Data Project](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/TidyData-project): In this project, I convert a wide dataset (about X-Men comic valuations) into one that follows Tidy Data principles. This project taught me how to data clean properly, a skill that I will most likely use in all of my subsequent projects involving realworld data. 
+<br> 
+<br>
+
+#
+<br>
+<img align="left" width="200" height="150" src="https://wp.theringer.com/wp-content/uploads/2025/02/LukaADTrade_Getty-Ringer-scaled.jpg"> 
+
+#### [Luka-AD Streamlit App](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/luka_ad_trade_app): In this project, I created an app where you can compare  Luka Doncic and AD's stats between each other (and 20 other NBA players). This app was created in response to the wild Lakers-Mavericks Trade that sent Luka to LA for next to nothing in return.
  
