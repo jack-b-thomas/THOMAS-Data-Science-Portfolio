@@ -49,18 +49,16 @@ with st.sidebar:
 st.sidebar.markdown("---")
 st.sidebar.subheader("Select Your Dataset")
 selection = st.sidebar.selectbox(label= "", 
-                     options= ["Iris", "Student Performance", "Penguins", "Titanic", "Other"]) #selection box for with each dataframe. 
+                     options= ["Iris", "Penguins", "Titanic", "Other"]) #selection box for with each dataframe. 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 #an if statement that iterates over the selection and reads the right dataframe. 
 #New object called file_select stores the users choice.  
 if selection == "Penguins":
-    df = pd.read_csv("Data/penguins.csv")
+    df = sns.load_dataset("penguins")
 elif selection == "Iris": 
-    df = pd.read_csv("Data/Iris.csv") 
-elif selection == "Student Performance":
-    df = pd.read_csv("Data/Student_Performance.csv")
+    df = sns.load_dataset("iris")
 elif selection == "Titanic": 
-    df = pd.read_csv("Data/Titanic-Dataset.csv")
+    df = sns.load_dataset('titanic')
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 #User can also upload a dataframe using a form and a submit button (only CSV files can be uploaded). 
 #the users uploaded dataframe is stored in an object called file_upload.
