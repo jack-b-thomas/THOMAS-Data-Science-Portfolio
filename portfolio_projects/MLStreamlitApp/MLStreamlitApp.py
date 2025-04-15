@@ -18,7 +18,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 
-#other things that need to be important 
+#other important things that need to work
 from sklearn.preprocessing import StandardScaler
 from streamlit_option_menu import option_menu
 from sklearn.model_selection import train_test_split
@@ -43,15 +43,14 @@ with st.sidebar:
                                "diagram-2-fill"], #page (and title) icons are from: https://icons.getbootstrap.com/?q=tree.
                         default_index=0, #orders the pages.  
                         orientation='vertical') #arranges menu vertically. 
-
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-#User can select from four pre-uploaded dataframe. 
+#User can select from four pre-uploaded dataframe, using a selection box. 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Select Your Dataset")
 selection = st.sidebar.selectbox(label= "", 
-                     options= ["Iris", "Student Performance", "Penguins", "Titanic", "Other"]) #selection box for with each dataframe. 
+                     options= ["Iris", "Student Performance", "Penguins", "Titanic", "Other"]) #selection box with each dataframe. 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
-#an if statement that iterates over the selection and reads the right dataframe. 
+#an if statement that iterates over "selection" and reads the right dataframe. 
 #New object called file_select stores the users choice.  
 if selection == "Penguins":
     df = pd.read_csv("Data/penguins.csv")
@@ -99,8 +98,8 @@ if model == "Linear Regression": #the following code is for the linear regressio
     drop_cols = st.multiselect(label="Drop any columns you do not be a part of the model as either features or targets (eg. if your dataset has a unique id label for each column it can be dropped here).", #the multi-selection box lets user drop any columns they do not want to be feature variables in the model. 
                              options= df_num.columns,
                              help="If your dataframe has any irrelevant columns, like a unique observation label, you can drop them by selecting it here.")
-    df_rel = df_num.drop(df_num[drop_cols], axis=1)
-    df_clean = df_rel.dropna()
+    df_rel = df_num.drop(df_num[drop_cols], axis=1)#allows the user to drop any irrelevant colomns
+    df_clean = df_rel.dropna()#dropping any observations with NaNs
     target = st.selectbox(label="Choose a Variable to Predict:",  #the selection box lets users choose which variable they want to predict
                           options = df_clean.columns, 
                           help="Choose one of the numeric columns to be your target variable. This is what the model will be predicting. Be sure to input it exactly as it appears in the uploaded file.")
@@ -227,7 +226,7 @@ if model == "Linear Regression": #the following code is for the linear regressio
         plt.ylabel("Residuals")
         plt.title(f"Residuals vs. Predicted {target}")
         sns.set_style(style="darkgrid")
-        st.pyplot(fig)
+        st.pyplot(fig)#plotting the figure in streamlit 
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 #the following code is for the logistic regression machine learning model: 
 elif model == "Logistic Regression": 
@@ -291,7 +290,7 @@ elif model == "Logistic Regression":
          #Displaying the evaluation metrics: 
          st.header("How did the model perform?")
          st.subheader("Accuracy Score")
-         st.text(f"{accuracy_raw *100:.2f}% of predictions were correct.")
+         st.text(f"{accuracy_raw *100:.2f}% of predictions were correct.")#displaying accuracy
          coef_col, int_col = st.columns([1,1], # creating columns to display coefficients and intercepts
                                         vertical_alignment="top")
          with coef_col: 
@@ -318,7 +317,7 @@ elif model == "Logistic Regression":
          plt.xlabel(f"Predicted {target}")
          plt.ylabel(f"Actual {target}")
          plt.title("Confusion Matrix")
-         st.pyplot(fig)
+         st.pyplot(fig)#displaying the confusion matrix 
          st.markdown(" - The **Confusion Matrix** shows the ratios of true positives, false postives, true negatives, and false negatives.")
 #----------------------------------------------------------------------------------------------------------------------------------------------------
     #The following code is for when the user chooses the data is scaled:
@@ -504,6 +503,8 @@ elif model == "K-Nearest Neighbor":
         st.pyplot(fig)
         st.markdown(" - The **Confusion Matrix** shows the ratios of true positives, false postives, true negatives, and false negatives.")
 #----------------------------------------------------------------------------------------------------------------------------------------------------
+#The following code is for the Decision Tree Machine Learning Model!
+#a lot of the code is similar to the previous three machine learning models.
 elif model == "Decision Tree":
     st.subheader("If you uploaded your dataset:")
     st.markdown(" - Make sure your dataframe is formatted according to [Tidy Data Principles](https://vita.had.co.nz/papers/tidy-data.pdf). This is the best way to make sure that the model will work with your dataframe.")
