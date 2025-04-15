@@ -10,7 +10,17 @@
 #
 ### My Most Recent Projects: 
 
+<img align="left" width="200" height="150" src="https://ichef.bbci.co.uk/images/ic/480xn/p0jymr5g.jpg"> 
 
+#### [Machine Learning Streamlit App](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/MLStreamlitApp): In this project, I create an app where users can upload their own data and choose between four supervised machine learning models. The app returns model specific metrics and visualizations. This project taught me a lot about streamlit, website design and the nuances of supervised machine learning models. 
+
+
+<br>
+<br>
+
+
+#
+<br>
 <img align="left" width="200" height="150" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOMTc0Xx_a18nAwr-F2lh1rLyAoiVOe-K4fje8hVM1lSfM0_WvYw45-Isdtqm1UZP5dpE&usqp=CAU"> 
 
 #### [Tidy Data Project](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/TidyData-project): In this project, I convert a wide dataset (about X-Men comic valuations) into one that follows Tidy Data principles. This project taught me how to data clean properly, a skill that I will most likely use in all of my subsequent projects involving realworld data. 
