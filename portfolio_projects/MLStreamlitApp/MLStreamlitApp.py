@@ -48,7 +48,11 @@ with st.sidebar:
 st.sidebar.markdown("---")
 st.sidebar.subheader("Select Your Dataset")
 selection = st.sidebar.selectbox(label= "", 
+<<<<<<< HEAD
                      options= ["Iris", "Penguins", "Titanic", "Other"]) #selection box with each dataframe. 
+=======
+                     options= ["Iris", "Penguins", "Titanic", "Other"]) #selection box for with each dataframe. 
+>>>>>>> d3aeb8f71e7aac1a47d7d54803ac4a2b7130e16f
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 #an if statement that iterates over "selection" and reads the right dataframe. 
 #New object called file_select stores the users choice.  
