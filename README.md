@@ -12,7 +12,7 @@
 
 <img align="left" width="200" height="150" src="https://ichef.bbci.co.uk/images/ic/480xn/p0jymr5g.jpg"> 
 
-#### [Machine Learning Streamlit App](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/MLStreamlitApp): In this project, I create an app where users can upload their own data and choose between four supervised machine learning models. The app returns model specific metrics and visualizations. This project taught me a lot about streamlit, website design and the nuances of supervised machine learning models. 
+#### [Machine Learning Streamlit App](https://github.com/jack-b-thomas/THOMAS-Data-Science-Portfolio/tree/main/portfolio_projects/MLStreamlitApp): In this project, I create an app where users can upload their own data and choose between three supervised machine learning models. The app returns model specific metrics and visualizations. This project taught me a lot about streamlit, website design and the nuances of supervised machine learning models. 
 
 
 <br>
