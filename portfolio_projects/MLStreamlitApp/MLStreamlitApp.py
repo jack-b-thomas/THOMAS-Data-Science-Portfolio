@@ -53,13 +53,13 @@ selection = st.sidebar.selectbox(label= "",
 #an if statement that iterates over "selection" and reads the right dataframe. 
 #New object called file_select stores the users choice.  
 if selection == "Penguins":
-    df = pd.read_csv("Data/penguins.csv")
+    df = pd.read_csv("./data/penguins.csv")
 elif selection == "Iris": 
-    df = pd.read_csv("Data/Iris.csv") 
+    df = pd.read_csv("./data/Iris.csv") 
 elif selection == "Student Performance":
-    df = pd.read_csv("Data/Student_Performance.csv")
+    df = pd.read_csv("./data/Student_Performance.csv")
 elif selection == "Titanic": 
-    df = pd.read_csv("Data/Titanic-Dataset.csv")
+    df = pd.read_csv("./data/Titanic-Dataset.csv")
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 #User can also upload a dataframe using a form and a submit button (only CSV files can be uploaded). 
 #the users uploaded dataframe is stored in an object called file_upload.
