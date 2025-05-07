@@ -100,7 +100,7 @@ if model == "Linear Regression": #the following code is for the linear regressio
                              options= df_num.columns,
                              help="If your dataframe has any irrelevant columns, like a unique observation label, you can drop them by selecting it here.")
     df_rel = df_num.drop(df_num[drop_cols], axis=1)#allows the user to drop any irrelevant colomns
-    df_clean = df_rel.dropna()#dropping any observations with NaNs
+    df_clean = df_rel.dropna(axis = 0)#dropping any observations with NaNs
     target = st.selectbox(label="Choose a Variable to Predict:",  #the selection box lets users choose which variable they want to predict
                           options = df_clean.columns, 
                           help="Choose one of the numeric columns to be your target variable. This is what the model will be predicting. Be sure to input it exactly as it appears in the uploaded file.")
