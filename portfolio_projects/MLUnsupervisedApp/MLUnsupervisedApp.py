@@ -76,12 +76,7 @@ if page == "Models":
         drop_cols = st.sidebar.multiselect(label="Drop any columns not part of analysis.", #the multi-selection box lets user drop any columns they do not want to be feature variables in the model. 
                                 options= df.columns,
                                 help="If your dataframe has any irrelevant columns (e.g. a unique observation label) or columns you do not want the model to include, you can drop them by selecting them here.")
-        components = st.sidebar.slider(label="Number of Components", #hyperameters for PCA
-                                    min_value=1, 
-                                    max_value=15, 
-                                    value=2)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
-#The following code runs the PCA Model: 
 #Preprocessing the Dataset 
         df_num = df.select_dtypes(include='number') #This df includes only numeric variables
         if no_numeric_data == "No":
@@ -91,6 +86,12 @@ if page == "Models":
         df_clean = df_1.drop(df_1[drop_cols], axis=1)#dropping any irrelevant colomns
         df_clean.dropna(inplace=True) #dropping missing data
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
+# Allows the user to choose a number of components        
+        components = st.sidebar.slider(label="Number of Components", #hyperameters for PCA
+                                    min_value=1, 
+                                    max_value=(len(df_clean.columns)-1), #cannot choose a component value greater than the number of columns in the df already  
+        value=2)
+#-------------------------------------------------------------------------------------------------------------------------------------------------------
 #Defining target, feature variables 
         target = st.sidebar.selectbox(label="Choose a Target Variable:",  #the selection box lets users choose which variable they want to be the target variable
                             options = df_clean.columns, 
@@ -99,6 +100,7 @@ if page == "Models":
         feature_vars = pd.DataFrame(df_clean)
         X = feature_vars.drop(target, axis=1)#defining the feature variables that will be used in the model. 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
+#The following code runs the PCA Model: 
 #Putting the feature variables on the same scale  
         scaler = StandardScaler()
         X_std = scaler.fit_transform(X)
@@ -149,7 +151,7 @@ if page == "Models":
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 #displaying a graph of the PCA (Has to be 2d, so only two components)
         with col2:
-            pca_full = PCA(n_components = 15).fit(X_std)
+            pca_full = PCA(n_components = len(df_clean.columns)-1).fit(X_std)#cannot graph more components than the number of columns in the df
             cumulative_variance = np.cumsum(pca_full.explained_variance_ratio_)
             st.subheader("Cumulative Explained Variance Visualized", divider = "red")
             fig2, ax2 = plt.subplots()
@@ -311,6 +313,7 @@ elif page == "Dataset Preprocessing":
     with st.container(height = 400, border=True): 
         st.markdown("#### Your dataset!")
         st.write(df)#displays the chosen dataset
+        
 #here ends the code 
     
     
