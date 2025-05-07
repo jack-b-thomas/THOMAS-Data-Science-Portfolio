@@ -40,7 +40,7 @@ selection = st.sidebar.selectbox(label= "Select Your Dataset",
                                  options= ["NBA Players", "NBA Teams", "Other"]) #selection box with each dataframe.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 if selection == "NBA Players": 
-    df = pd.read_csv("Data/NBA Stats 202425 All Metrics  NBA Player Props Tool.csv")
+    df = pd.read_csv("portfolio_projects/MLUnsupervisedApp/Data/NBA Stats 202425 All Metrics  NBA Player Props Tool.csv")
     df.drop("RANK", axis = 1, inplace=True)
 elif selection == "NBA Teams": 
     df = pd.read_csv("portfolio_projects/MLUnsupervisedApp/Data/NBA Team Stats.csv")
