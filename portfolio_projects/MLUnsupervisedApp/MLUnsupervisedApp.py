@@ -41,10 +41,10 @@ selection = st.sidebar.selectbox(label= "Select Your Dataset",
                                  options= ["NBA Players", "NBA Teams", "Other"]) #selection box with each dataframe.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 if selection == "NBA Players": 
-    df = pd.read_csv("Data\NBA Stats 202425 All Metrics  NBA Player Props Tool.csv")
+    df = pd.read_csv(r"Data\NBA Stats 202425 All Metrics  NBA Player Props Tool.csv")
     df.drop("RANK", axis = 1, inplace=True)
 elif selection == "NBA Teams": 
-    df = pd.read_csv("Data\NBA Team Stats.csv")
+    df = pd.read_csv(r"Data\NBA Team Stats.csv")
     df.drop(['Rk', "Unnamed: 17", "Unnamed: 22", "Unnamed: 27", "Arena"], axis = 1, inplace=True)
 elif selection == "Other":
     with st.sidebar.form("upload form",
