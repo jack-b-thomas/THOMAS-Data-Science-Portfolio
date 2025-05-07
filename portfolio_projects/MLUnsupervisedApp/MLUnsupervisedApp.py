@@ -87,7 +87,7 @@ if page == "Models":
         df_clean.dropna(inplace=True) #dropping missing data
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 # Allows the user to choose a number of components        
-        components = st.sidebar.slider(label="Number of Components", #hyperameters for PCA
+        components = st.sidebar.slider(label="Choose Number of Components", #hyperameters for PCA
                                     min_value=1, 
                                     max_value=(len(df_clean.columns)-1), #cannot choose a component value greater than the number of columns in the df already  
         value=2)
