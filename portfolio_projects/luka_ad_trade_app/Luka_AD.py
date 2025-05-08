@@ -15,11 +15,11 @@ if page == 'The Trade':
     st.header('The Complete Terms:')
     logo1, logo2, logo3 = st.columns([1,1,1], gap = 'large', vertical_alignment='top')
     with logo1: 
-        st.image('https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg', use_column_width=True) 
+        st.image('https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg', use_container_width=True) 
     with logo2:
-        st.image('https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg', use_column_width=True)
+        st.image('https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg', use_container_width=True)
     with logo3:
-        st.image('https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg', use_column_width=True)
+        st.image('https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg', use_container_width=True)
     col1, col2, col3 = st.columns([1,1,1], gap = 'large', vertical_alignment='top')
     with col1: 
         st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3945274.png&w=350&h=254', use_column_width=True)
