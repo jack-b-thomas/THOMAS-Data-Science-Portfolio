@@ -8,36 +8,46 @@
 #### The app requires the following libraries: `matplotlib 3.10.1`, `numpy 2.2.5`, `pandas 2.2.3`, `scikit_learn 1.6.1`, `seaborn 0.12.2`, `streamlit 1.37.1`, and `streamlit_option_menu 0.4.0` 
 #
 
-##### If YOU choose Principal Component Analysis (PCA) - where you reduce the number of variables into components.
-- ##### You can choose the number of components
-- ##### You can see a visualization that shows the data graphed with repsect to two principal components
-- ##### You can see the variance statistics
-- ##### You can the cumulative variance plotted with respect to the number of components
-
-##### If YOU choose K-means Clustering (Kmeans) - where you group the number of observations into clusters
-- ##### You can choose the number of clusters
-- ##### You can see the clusters graphed with respect to two principal components
-- ##### You can compare the clusters to the true labels (which is graphed in the same way as the clusters).
-- ##### You can see centroid statistics
-- ##### You can see the Within Cluster Sum of Squares and Silhouette Scores graphed with respect to the number of clusters
+##### In this app, the user can choose from two different unsupervised machine learning models: 
+- ##### `PCA` from [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html). This is the Principal Component Analysis unsupervised machine learning model where the model uses singular value decomposition to project the data with less dimensions (variables).
+  - ##### You can choose the number of components
+  - ##### You can see a visualization that shows the data graphed with repsect to two principal components
+  - ##### You can see the variance statistics
+  - ##### You can the cumulative variance plotted with respect to the number of components
+- ##### `KMeans` from [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html). This is the K-means clustering unsupervised machine learning model where the model groups the data into 'clusters' based on shared characteristics. 
+  - ##### You can choose the number of clusters
+  - ##### You can see the clusters graphed with respect to two principal components
+  - ##### You can compare the clusters to the true labels (which is graphed in the same way as the clusters).
+  - ##### You can see centroid statistics
+  - ##### You can see the Within Cluster Sum of Squares and Silhouette Scores graphed with respect to the number of clusters
 
 #
 
-#### Principal Component Analysis Visualization Example:
-<img  width="250" height="200" alt="Screenshot 2025-05-08 at 12 08 59 AM" src="https://github.com/user-attachments/assets/abb1df23-7b57-47c4-8cbe-b844d5ca563b" />
-
-# 
+#### The app returns metrics and graphs specific to the chosen model. 
 
 
-#### K-Means Clustering Visualization Example:
+<img align="left" width="300" height="240" alt="Screenshot 2025-05-08 at 12 08 59 AM" src="https://github.com/user-attachments/assets/abb1df23-7b57-47c4-8cbe-b844d5ca563b" />
+<br>
+<br>
 
-<img width="612" alt="Screenshot 2025-05-08 at 12 08 36 AM" src="https://github.com/user-attachments/assets/9278632b-ef03-4451-8375-9dc46aa81a6d" />
+##### `PCA` returns Explained Variance Ratio, Cumulative Explained Variance Ration, as well a 2-dimensional graph of the data. 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
+<img align="left" width="310" height="200" 
+  alt="Screenshot 2025-05-08 at 1 52 04 AM" src="https://github.com/user-attachments/assets/810720de-0bfd-4431-b3cc-bb4edf20d363" />
 
 
+##### `KMeans` returns Centroid Locations, First 10 Centroid Assignments, Within-Cluster Sum of Squares, Silhouette Scores, and comparisons between the models cluster predictions and the true lables, both graphed using 2-dimensional PCA.
 
+<br>
+<br>
 
+#
 
-<p style= 'text-alling: center; color: grey; font-size:8px'> NBA Player Data comes from <a href ='https://www.nbastuffer.com'> NBA Stuffer</a>. NBA Team Data comes from <a href ='https://www.basketball-reference.com/leagues/NBA_2025.html'> Basketball Reference</a>.
+#### NBA Player Data comes from [NBA Stuffer](https://www.nbastuffer.com). NBA Team Data comes from [Basketball Reference](https://www.basketball-reference.com/leagues/NBA_2025.html).
 
