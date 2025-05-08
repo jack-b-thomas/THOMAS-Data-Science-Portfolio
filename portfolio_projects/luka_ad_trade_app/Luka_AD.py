@@ -15,46 +15,46 @@ if page == 'The Trade':
     st.header('The Complete Terms:')
     logo1, logo2, logo3 = st.columns([1,1,1], gap = 'large', vertical_alignment='top')
     with logo1: 
-        st.image('https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg', use_container_width=True) 
+        st.image('https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg', use_column_width=True) 
     with logo2:
-        st.image('https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg', use_container_width=True)
+        st.image('https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg', use_column_width=True)
     with logo3:
-        st.image('https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg', use_container_width=True)
+        st.image('https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg', use_column_width=True)
     col1, col2, col3 = st.columns([1,1,1], gap = 'large', vertical_alignment='top')
     with col1: 
-        st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3945274.png&w=350&h=254', use_container_width=True)
+        st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3945274.png&w=350&h=254', use_column_width=True)
         st.html('<h5> Luka Doncic </h5>')
-        st.image('https://cdn.nba.com/headshots/nba/latest/1040x760/1628467.png', use_container_width=True)
+        st.image('https://cdn.nba.com/headshots/nba/latest/1040x760/1628467.png', use_column_width=True)
         st.html('<h5> Maxi Kleber </h5>')
-        st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6461.png&w=350&h=254', use_container_width=True)
+        st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6461.png&w=350&h=254', use_column_width=True)
         st.html('<h5> Markieff Morris')
     with col2: 
         st.image('https://www.mavs.com/wp-content/uploads/2025/02/AD.png')
         st.html('<h5> Anthony Davis </h5>')
         st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4432582.png&w=350&h=254')
         st.html('<h5> Max Christie </h5>')
-        st.image('https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032018/untitled-3_26.png?gdrsLh8gefGS0SBTga7JCr1nQaK41g9w&itok=kOiJNVqI', use_container_width=True)
+        st.image('https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032018/untitled-3_26.png?gdrsLh8gefGS0SBTga7JCr1nQaK41g9w&itok=kOiJNVqI', use_column_width=True)
         st.html('<h5> 2029 First Round Pick </h5>') 
     with col3: 
         st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/5105797.png&w=350&h=254')
         st.html('<h5> Jalen Hood-Schifino </h5>')
-        st.image('https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032018/untitled-3_26.png?gdrsLh8gefGS0SBTga7JCr1nQaK41g9w&itok=kOiJNVqI', use_container_width=True)
+        st.image('https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032018/untitled-3_26.png?gdrsLh8gefGS0SBTga7JCr1nQaK41g9w&itok=kOiJNVqI', use_column_width=True)
         st.html('<h5> Two 2025 Second Round Picks </h5>')
 elif page == 'Stats': 
     st.html("<h1 style= 'text-allign: center; border-radius: 10px; color:#ff2b2b; font-size:35px'> Player Statistics </h1>")
     st.write("Compare Luka and AD's statistics from the 2024-25 season, and see if the trade makes sense to you!")
-    df = pd.read_csv('portfolio_projects/luka_ad_trade_app/data/Luka_AD.csv')
-    NBA_df = pd.read_csv('portfolio_projects/luka_ad_trade_app/data/NBA Stats 202425 All Metrics  NBA Player Props Tool.csv')
+    #df = pd.read_csv('portfolio_projects/luka_ad_trade_app/data/Luka_AD.csv')
+    NBA_df = pd.read_csv('data/NBA Stats 202425 All Metrics  NBA Player Props Tool.csv')
     luka_df = NBA_df[NBA_df['NAME']== 'Luka Doncic']
     ad_df = NBA_df[NBA_df['NAME']== 'Anthony Davis']
     column1, column2 = st.columns([2,2], gap = 'medium', vertical_alignment='center') 
     with column1: 
         st.html('<h4> Luka Doncic </h4>')
-        st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3945274.png&w=350&h=254', use_container_width=True)
+        st.image('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3945274.png&w=350&h=254', use_column_width=True)
         st.dataframe(luka_df)
     with column2:
         st.html('<h4> Anthony Davis </h4>') 
-        st.image('https://www.mavs.com/wp-content/uploads/2025/02/AD.png', use_container_width=True)
+        st.image('https://www.mavs.com/wp-content/uploads/2025/02/AD.png', use_column_width=True)
         st.dataframe(ad_df)
     choice = st.selectbox("Choose a Stat to Compare:", ['GP', 
                                                'AGE', 
